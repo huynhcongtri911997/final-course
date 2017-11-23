@@ -1,7 +1,7 @@
 <?php session_start(); ?>
 <?php require_once "../db/mysql.php"; ?>
 <?php
-  define("URL_IMAGE", "http://localhost/final-course/public/uploads/");
+  define("URL_IMAGE", "http://localhost:8080/final-course/public/uploads/");
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -19,9 +19,9 @@
         <div class="col-lg-9">    
           <div class="row">
             <?php 
-              if(isset($_GET["product_id"])){
-                $product_id = $_GET["product_id"];
-                $sql = "select * from products where id=$product_id";
+              if(isset($_GET["id"])){
+                $id = $_GET["id"];
+                $sql = "select * from products where id=$id";
                 $result = $conn->query($sql);
                 if($result->num_rows > 0){
                 $row = $result->fetch_assoc(); ?>
