@@ -1,0 +1,15 @@
+.style{
+	width: 825px;
+	height: 750px;
+	border: 5px;
+	border-style: outset;
+	border-radius: 30px;
+	padding-left: 20px;
+	border-color: #4DD0E1;
+	padding-top: 20px;
+}
+.textline{
+	color: red;
+	font-weight: bold;
+	font-size: 20px;
+}

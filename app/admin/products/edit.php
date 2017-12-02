@@ -49,7 +49,7 @@
         </select>
       </div>
       <div class="row">
-        <label>Ten nguoi dung:</label>
+        <label>Ten san pham:</label>
         <input class="form-control" type="text" name="name" value="<?php echo $name; ?>">
       </div>
       <div class="row">

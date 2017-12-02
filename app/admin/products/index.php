@@ -6,6 +6,7 @@
 <!DOCTYPE html>
 <html>
 <head>
+<?php include "../../menuadmin.php";?>
   <meta charset="utf-8">
   <title>Danh sach nguoi dung</title>
   <link rel="stylesheet" type="text/css" href="../../../public/css/bootstrap.min.css">
@@ -52,5 +53,8 @@
     </tbody>
   </table>
 </div>
+<script src="../../../public/js/jquery.min.js"></script>
+<script src="../../../public/js/bootstrap.min.js"></script>
+<script src="../../../public/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>

@@ -4,6 +4,7 @@
 <meta charset="utf-8">
 <html>
 <head>
+<?php include "../../menuadmin.php";?>
   <title>Danh sach nguoi dung</title>
    <link rel="stylesheet" type="text/css" href="../../../public/css/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="../../../public/css/custom.css">
@@ -44,8 +45,8 @@
     							echo "User";
     							break;
     					}; ?>
-    					<td><a href="edit.php?id=<?php echo $row["id"];?>">Edit</a></td>;
-    					<td><a href="delete.php?id=<?php echo $row["id"];?>">Delete</a></td>;
+    					<td><a href="edit.php?id=<?php echo $row["id"];?>">Edit</a></td>
+    					<td><a href="delete.php?id=<?php echo $row["id"];?>">Delete</a></td>
     				</tr>
 		<?php   }
     		}
@@ -53,5 +54,8 @@
     </tbody>
   </table>
 </div>
+<script src="../../../public/js/jquery.min.js"></script>
+<script src="../../../public/js/bootstrap.min.js"></script>
+<script src="../../../public/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>

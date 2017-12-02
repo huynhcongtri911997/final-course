@@ -27,9 +27,9 @@
                       <a href="single.php?id=<?php echo $row["id"];?>"><img class="card-img-top" src="<?php echo URL_IMAGE.$row['image'];?>" alt=""></a>
                       <div class="card-body">
                         <h4 class="card-title">
-                          <a href="#"><?php echo $row["name"];?></a>
+                          <a href="single.php?id=<?php echo $row["id"];?>"><?php echo $row["name"];?></a>
                         </h4>
-                        <h5>$24.99</h5>
+                        <h5>Giá: <?php echo $row["price"]; ?> VNĐ</h5>
                         <p class="card-text"><?php echo $row["description"];?>.</p>
                       </div>
                       <div class="card-footer">
