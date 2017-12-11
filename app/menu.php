@@ -1,6 +1,6 @@
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
       <div class="container">
-        <a class="navbar-brand" href="index.php"><img width="100" height="30" src="../public/uploads/13.jpg"></a>
+        <a class="navbar-brand" href="index.php">Mega Shop</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
@@ -15,19 +15,24 @@
               <a class="nav-link" href="about.php">About</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">Services</a>
+              <a class="nav-link" href="Services.php">Services</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">Contact</a>
+              <a class="nav-link" href="contact.php">Contact</a>
             </li>
-            <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" id="dropdown01" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Admin</a>
-          <div class="dropdown-menu" aria-labelledby="dropdown01">
-            <a class="dropdown-item" href="admin/catalogs/index.php">Danh sách Catalogs</a>
-            <a class="dropdown-item" href="admin/products/index.php">Danh sách Products</a>
-            <a class="dropdown-item" href="admin/users/index.php">Danh sách Users</a>
-          </div>
-        </li>
+            
+            <?php if(isset($_SESSION["login"])) { ?>
+            <li class="nav-item">
+              <a class="nav-link" href="logout.php">Logout</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="../app/admin/index.php">Admin</a>
+            </li>
+            <?php }else{ ?>
+            <li class="nav-item">
+              <a class="nav-link" href="login.php">Login</a>
+            </li>
+            <?php } ?>
           </ul>
         </div>
       </div>

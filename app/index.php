@@ -8,19 +8,48 @@
   <head>    
     <?php include "lib.php"; ?>    
   </head>
-  <body>
+  <body style="background-color: #F0F4C3;">
     <?php include "menu.php" ?>
     <div class="container">
+    <div class="row">
+        <i class="flash"><?php if(isset($_SESSION["flash"])) echo $_SESSION["flash"]; ?></i>
+    </div>
       <div class="row">
         <?php include "slide-left.php" ?>
         <div class="col-lg-9"> 
           <?php include "slide.php"; ?>   
           <div class="row">
             <?php
-                $sql = "select * from products";
-                $result = $conn->query($sql);
-                if($result->num_rows > 0)
-                {
+                //$sql = "select * from products";
+                //$result = $conn->query($sql);
+                //if($result->num_rows > 0)
+                //{
+                $result = mysqli_query($conn, 'select count(id) as total from products');
+                $row = mysqli_fetch_assoc($result);
+                $total_records = $row['total'];
+
+                // BƯỚC 3: TÌM LIMIT VÀ CURRENT_PAGE
+                $current_page = isset($_GET['page']) ? $_GET['page'] : 1;
+                $limit = 6;
+
+                // BƯỚC 4: TÍNH TOÁN TOTAL_PAGE VÀ START
+                // tổng số trang
+                $total_page = ceil($total_records / $limit);
+
+                // Giới hạn current_page trong khoảng 1 đến total_page
+                if ($current_page > $total_page){
+                    $current_page = $total_page;
+                }
+                else if ($current_page < 1){
+                    $current_page = 1;
+                }
+
+                // Tìm Start
+                $start = ($current_page - 1) * $limit;
+
+                // BƯỚC 5: TRUY VẤN LẤY DANH SÁCH TIN TỨC
+                // Có limit và start rồi thì truy vấn CSDL lấy danh sách tin tức
+                $result = mysqli_query($conn, "SELECT * FROM products LIMIT $start, $limit");
                   while($row = $result->fetch_assoc()) {?>
                   <div class="col-lg-4 col-md-6 mb-4">
                     <div class="card h-100">
@@ -37,10 +66,42 @@
                       </div>
                     </div>
                   </div>
-                  <?php  }
+                  <?php  //}
                 }
               ?>           
           </div>
+          <!-- /.row -->
+        <nav aria-label="Page navigation example">
+          <ul class="pagination">
+          <?php
+            if ($current_page > 1 && $total_page > 1){ ?>
+            <li class="page-item">
+              <a class="page-link" href="index.php?page=<?php echo ($current_page-1); ?>" aria-label="Previous">
+                <span aria-hidden="true">&laquo;</span>
+                <span>Previous</span>
+              </a>
+            </li>
+            <?php } ?>
+
+            <?php for ($i = 1; $i <= $total_page; $i++){
+              if ($i == $current_page){ ?>
+                <li class="page-item-active"><a class="page-link" href="" style="color: red; font-weight: bold;"><?php echo $i; ?></a></li>
+              <?php }else{ ?>
+                <li class="page-item"><a class="page-link" href="index.php?page=<?php echo $i; ?>"><?php echo $i; ?></a></li>
+            <?php
+                }
+              }
+            ?>
+          <?php if ($current_page < $total_page && $total_page > 1){ ?>
+            <li class="page-item">
+              <a class="page-link" href="index.php?page=<?php echo ($current_page+1); ?>" aria-label="Next">
+                <span aria-hidden="true">&raquo;</span>
+                <span>Next</span>
+              </a>
+            </li>
+          <?php } ?>
+          </ul>
+        </nav>
         </div>
       </div>
     </div>
@@ -49,3 +110,4 @@
     <script src="../public/js/bootstrap.bundle.min.js"></script>
   </body>
 </html>
+<?php unset($_SESSION["flash"]); ?>

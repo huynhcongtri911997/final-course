@@ -1,0 +1,64 @@
+.none{
+	width: 825px;
+	height: 700px;
+	border-style: outset;
+	border-radius: 30px;
+	padding-left: 20px;
+	border-color: #4DD0E1;
+	padding-top: 20px;
+	margin-bottom: 30px;
+}
+.ninja{
+	color: black;
+	font-weight: bold;
+	font-size: 20px;
+}
+.tachra{
+	margin-top: 20px;
+}
+.bo{
+	border-top-left-radius: 20px;
+	border-bottom-right-radius: 20px;
+	padding-left: 10px;
+	border-style: inset;
+	width: 300px;
+}
+input[type=submit]{
+  margin-left: 0.5em;
+  height: 2.5em;
+  padding: 0.2em 1em 0.2em 2.25em;
+  font-size: 3em;
+  font-weight: bold;
+  font-family: "Open Sans";
+  text-transform: uppercase;
+  color: #696666;
+  background: url(https://i.imgur.com/Th606mh.png) no-repeat scroll 0.75em 0.07em transparent;
+  background-size: 54px 204px;
+  border-radius: 2em;
+  border: 0.15em solid #F9C23C;
+  cursor: pointer;
+  transition: all 0.3s ease 0s;
+}
+input[type="submit"]:hover {
+    color: #fff;
+    background-color: #EAA502;
+    border-color: #EAA502;
+    background-position: 0.75em bottom;
+    -webkit-transition: all 0.3s ease;
+    -ms-transition: all 0.3s ease;
+    transition: all 0.3s ease;
+}
+input[type="submit"]:focus {
+    background-position: 2em -4em;
+    -webkit-transition: all 0.3s ease;
+    -ms-transition: all 0.3s ease;
+    transition: all 0.3s ease;
+}
+/* Webfonts */
+
+@font-face {
+    font-family: 'Open Sans';
+    font-style: normal;
+    font-weight: 700;
+    src: local('Open Sans Bold'), local('OpenSans-Bold'), url(https://themes.googleusercontent.com/static/fonts/opensans/v8/k3k702ZOKiLJc3WVjuplzHhCUOGz7vYGh680lGh-uXM.woff) format('woff');
+}

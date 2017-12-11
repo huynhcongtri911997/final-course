@@ -8,7 +8,7 @@
   <head>
     <?php include "lib.php"; ?>
   </head>
-  <body>
+  <body style="background-color: #F0F4C3;">
     <!-- Navigation -->
     <?php include "menu.php" ?>
     <!-- Page Content -->
@@ -17,7 +17,8 @@
         <?php include "slide-left.php" ?>
         <!-- /.col-lg-3 -->
         <div class="col-lg-9">
-          <div class="row">
+        <?php include "slidecatalogs.php"; ?>
+          <div class="row" style="margin-top: 50px;">
             <?php
               if(isset($_GET["catalog_id"])){
               $catalog_id = $_GET["catalog_id"];
@@ -31,7 +32,7 @@
                       <a href="single.php?id=<?php echo $row["id"];?>"><img class="card-img-top" src="<?php echo URL_IMAGE.$row['image'];?>" alt=""></a>
                       <div class="card-body">
                         <h4 class="card-title">
-                          <a href="#"><?php echo $row["name"];?></a>
+                          <a href="single.php?id=<?php echo $row["id"];?>"><?php echo $row["name"];?></a>
                         </h4>
                         <h5>$<?php echo $row["price"];?></h5>
                         <p class="card-text"><?php echo $row["description"];?>.</p>

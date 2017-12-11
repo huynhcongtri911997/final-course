@@ -8,7 +8,7 @@
   <head>    
     <?php include "lib.php"; ?>    
   </head>
-  <body>
+  <body style="background-color: #F0F4C3;">
     <!-- Navigation -->
     <?php include "menu.php" ?>
     <!-- Page Content -->

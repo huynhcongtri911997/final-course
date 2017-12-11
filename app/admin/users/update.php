@@ -1,6 +1,7 @@
 <?php session_start(); ?>
 <?php require_once "../../../db/mysql.php"; ?>
 <?php require_once "../../helper/user-helper.php"; ?>
+<?php require_once "../../check-login.php"; ?>
 <?php
   if(isset($_POST["id"]) && isset($_POST["name"]) && isset($_POST["email"])
     && isset($_POST["password"]) && isset($_POST["role"])){

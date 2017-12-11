@@ -11,10 +11,10 @@
     <script src="../public/js/bootstrap.bundle.min.js"></script>
 
 </head>
-<body>
+<body style="background-color: #F0F4C3;">
   <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
       <div class="container">
-        <h1>MegaShop</h1>
+        <?php include "menuabout.php" ?>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
@@ -50,7 +50,7 @@
       </div>
       </div>
   </div>
-<div class="footer" style=" width: auto; height: auto;">
-<div><?php include "footer.php" ?></div></div>
+<div class="footer" style=" width: auto; height: auto;"></div>
+<?php include "footer.php" ?>
 </body>
 </html>

@@ -13,3 +13,6 @@ body {
     padding-top: 56px;
   }
 }
+.page-item-active a{
+  background: pink;
+}
